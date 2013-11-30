@@ -74,11 +74,8 @@ test: build
 	@echo === Pushing application to the device ===
 	@$(ADB) push libs/$(APP_ARCH)/$(APP_NAME) /data/local/tmp
 	@$(ADB) shell chmod 777 /data/local/tmp/$(APP_NAME)
-	#@$(ADB) push ./test.script /data/local/tmp
-	#@$(ADB) shell chmod 777 /data/local/tmp/test.script
-	#@echo === Running application ===
-	#@$(ADB) shell /data/local/tmp/test.script
-	#@$(ADB) shell am start --user 10070 /data/local/tmp/$(APP_NAME) u0_a70 1000000 1100000
+	@echo === Running application ===
+	@$(ADB) shell /data/local/tmp/$(APP_NAME)
 
 uninstall:
 	@echo === Removing application ===
