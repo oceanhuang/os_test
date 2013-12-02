@@ -30,11 +30,12 @@ int main(int argc, char **argv) {
 	ext4_cowcopy("/data/local/tmp/hw5", "/data/local/tmp/cow_of_hw5");
 
 	printf("=== end of test for system call: ext4_cowcopy ===\n");
-	f = fopen("/data/local/tmp/cow_of_hw5", "w");
+	f = fopen("/data/local/tmp/cow_of_hw5", "a");
 	if (f == NULL) {
 		fprintf(stderr, "Can't open output file !\n");
   		exit(1);
 	}
+	fclose(f);
 	return 0;
 }
 
