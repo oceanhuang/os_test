@@ -7,6 +7,7 @@ int ext4_cowcopy(const char __user *src, const char __user *dest){
 }
 
 int main(int argc, char **argv) {
+	FILE *f;
 
 	printf("=== beginning of test for system call: ext4_cowcopy ===\n");
 	printf("*** Testcases calling ext4_cowcopy will fail ***\n");
@@ -29,7 +30,11 @@ int main(int argc, char **argv) {
 	ext4_cowcopy("/data/local/tmp/hw5", "/data/local/tmp/cow_of_hw5");
 
 	printf("=== end of test for system call: ext4_cowcopy ===\n");
-
+	f = fopen("/data/local/tmp/cow_of_hw5", "w");
+	if (f == NULL) {
+		fprintf(stderr, "Can't open output file !\n");
+  		exit(1);
+	}
 	return 0;
 }
 
