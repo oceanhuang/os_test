@@ -1,3 +1,3 @@
-LOCAL_MODULE    := hw6_test
-LOCAL_SRC_FILES := hw6_test.c
+LOCAL_MODULE    := wfile
+LOCAL_SRC_FILES := wfile.c
 
